@@ -1,13 +1,13 @@
 Package: simDeNet
 Type: Package
-Title: Simulation study on deconvolution for network estimate
-Version: 0.0.2
-Date: 2017-02-03
-Author: Yun Zhang
+Title: Simulation study on deconvolution for co-expression network
+Version: 1.0.0
+Date: 2019-04-22
+Author: Yun Zhang, Jonavelle Cuerdo, Matthew McCall
 Maintainer: Yun Zhang <yun_zhang@urmc.rochester.edu>
 Description: This package is built for reproducibility of the simulation study.
-Depends: R (>= 3.3.0)
-Imports: mvtnorm, preprocessCore, ISOpureR, ROCR, WGCNA, minet, bnlearn
+Depends: R (>= 3.5.0)
+Imports: methods, mvtnorm, preprocessCore, ISOpureR, ROCR, shiny
 VignetteBuilder: knitr
-Suggests: knitr, rmarkdown
+Suggests: knitr, rmarkdown, shinydashboard, DT, GeneNet, abind
 License: GPL-3

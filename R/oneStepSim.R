@@ -34,7 +34,7 @@ oneStepSim <- function(n.samp, mu.T, mu.N, Sigma.T=NULL, Sigma.N=NULL, prop.T="s
   
   return(list("m.gene"=m.gene, "Sigma.T"=Sigma.T, "Sigma.N"=Sigma.N, "true.str.T"=true.str.T,
               "expr.pure.T"=out.expr$expr.pure.T, "expr.pure.N"=out.expr$expr.pure.N, 
-              "expr.mixed"=out.expr$expr.mixed, "true.prop"=prop.T))
+              "expr.mixed"=out.expr$expr.mixed, "true.prop"=out.expr$true.prop))
 }
 
 
@@ -95,6 +95,7 @@ generate.Sigma <- function(m.gene, block.size, rho, dd=NULL, str.type="interchan
   if(sum(block.size)>m.gene){stop("Error: sum of block.size must be smaller than m.gene.")}
   if(length(rho)!=length(block.size)){stop("Error: rho and block.size must be have the same length.")}
   if(!is.null(dd)&length(dd)!=m.gene){stop("Error: dd must have length equal to m.gene.")}
+  if(length(str.type)!=length(block.size)&length(str.type)!=1){stop("Error: either specify one str.type for all the blocks or specify different str.type for each block.")}
   
   ## weight matrix
   if(is.null(dd)){dd <- rep(1,m.gene)}
